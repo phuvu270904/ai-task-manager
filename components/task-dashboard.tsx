@@ -42,7 +42,7 @@ export default function TaskDashboard({ tasks }: TaskDashboardProps) {
 
   return (
     <div className="space-y-6">
-      <Card className="border-purple-100 shadow-md dark:border-purple-900/30">
+      <Card className="border-blue-100 shadow-md dark:border-blue-900/30">
         <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-750 rounded-t-lg border-b border-blue-100 dark:border-gray-700">
           <CardTitle className="text-blue-700 dark:text-blue-300">
             Task Dashboard
@@ -51,10 +51,10 @@ export default function TaskDashboard({ tasks }: TaskDashboardProps) {
             View and manage all your submitted tasks.
           </CardDescription>
           <div className="relative mt-2">
-            <Search className="absolute left-2 top-2.5 h-4 w-4 text-purple-400 dark:text-purple-500" />
+            <Search className="absolute left-2 top-2.5 h-4 w-4 text-blue-400 dark:text-blue-500" />
             <Input
               placeholder="Search tasks..."
-              className="pl-8 border-purple-200 dark:border-purple-900/30 focus:border-purple-400 dark:focus:border-purple-500"
+              className="pl-8 border-blue-200 dark:border-blue-900/30 focus:border-blue-400 dark:focus:border-blue-500"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -62,7 +62,7 @@ export default function TaskDashboard({ tasks }: TaskDashboardProps) {
         </CardHeader>
         <CardContent className="bg-white dark:bg-gray-900">
           {tasks.length === 0 ? (
-            <div className="text-center py-8 text-purple-400 dark:text-purple-500">
+            <div className="text-center py-8 text-blue-400 dark:text-blue-500">
               No tasks have been submitted yet. Create your first task to see it
               here.
             </div>
@@ -70,7 +70,7 @@ export default function TaskDashboard({ tasks }: TaskDashboardProps) {
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-purple-50 dark:bg-purple-900/20">
+                  <TableRow className="bg-blue-50 dark:bg-blue-900/20">
                     <TableHead className="text-blue-700 dark:text-blue-300">
                       Task ID
                     </TableHead>
@@ -94,7 +94,7 @@ export default function TaskDashboard({ tasks }: TaskDashboardProps) {
                 <TableBody>
                   {filteredTasks.length === 0 ? (
                     <TableRow>
-                      <TableCell colSpan={6} className="text-center py-6 text-purple-400 dark:text-purple-500">
+                      <TableCell colSpan={6} className="text-center py-6 text-blue-400 dark:text-blue-500">
                         No tasks match your search criteria
                       </TableCell>
                     </TableRow>
@@ -102,7 +102,7 @@ export default function TaskDashboard({ tasks }: TaskDashboardProps) {
                     filteredTasks.map((task) => (
                       <TableRow
                         key={task.id}
-                        className="hover:bg-purple-50 dark:hover:bg-purple-900/10 border-b border-purple-100 dark:border-purple-900/30 cursor-pointer"
+                        className="hover:bg-blue-50 dark:hover:bg-blue-900/10 border-b border-blue-100 dark:border-blue-900/30 cursor-pointer"
                         onClick={() => setSelectedTask(task)}
                       >
                         <TableCell className="font-mono">
