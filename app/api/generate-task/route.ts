@@ -61,7 +61,9 @@ Return the response in JSON format with the following structure:
 			throw new Error("Invalid AI response format")
 		}
 
-		const aiData = JSON.parse(aiMessage)
+    const cleanedMessage = aiMessage.replace(/```json|```/g, "").trim()
+
+		const aiData = JSON.parse(cleanedMessage)
 
 		return new Response(JSON.stringify(aiData), {
 			headers: { "Content-Type": "application/json" },
